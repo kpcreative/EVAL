@@ -1,0 +1,52 @@
+def helper(input_str):
+
+
+    upp_chars = set()
+    low_chars = set()
+    
+    for ch in input_str:
+        if ch.isalpha():
+            if ch.isupper():
+                upp_chars.add(ch)
+            elif ch.islower():
+                low_chars.add(ch)
+    
+ 
+    
+    
+    print("UPP:", ', '.join(upp_chars))
+    print("Low:", ', '.join(low_chars))
+
+
+input_str = "DeveLopMent of EffecTive StrateGIES"
+helper(input_str)
+
+
+
+
+
+
+
+from collections import Counter
+
+def most_freq(input_str):
+
+  
+    
+    words = input_str.split()
+    letters = [char for char in input_str if char.isalpha()]#ham yha pe na character ko rkh rhe hai
+    
+  
+    word_counts = Counter(words)
+    letter_counts = Counter(letters)
+    
+    
+    most_common_word, most_common_word_count = word_counts.most_common(1)[0]
+    most_common_letter, most_common_letter_count = letter_counts.most_common(1)[0]
+    
+    print(f"word: {most_common_word}-{most_common_word_count}")
+    print(f"Alphabet: {most_common_letter}-{most_common_letter_count}")
+
+
+input_str = "can you can a can as a canner can can a can"
+most_freq(input_str)
